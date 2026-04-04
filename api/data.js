@@ -14,7 +14,7 @@ router.get("/getAll", async (req, res) => {
 
 router.get("/:model", async (req, res) => {
   try {
-    const data = await User.find({ model: req.params.model });
+    const data = await Product.find({ model: req.params.model });
     if (!data) return res.status(404).json("Not Found");
     res.json(data);
   } catch (error) {
@@ -26,7 +26,7 @@ router.post("/add", async (req, res) => {
   try {
     const newData = new Product(req.body);
     const saveUser = newData.save();
-    return res.status(201).json("User add successfully",saveUser);
+    return res.status(201).json("Product add successfully",saveUser);
   } catch (error) {
     console.log("Error ", error);
     res.status(500).json({ error: error.message });
