@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 connectDB();
-app.use("/macbook", require("./api/data"));
+app.use("/data", require("./api/data"));
 app.get("/", (req, res) => {
   res.json({ message: "API is running 🚀", status: "ok" });
 });
