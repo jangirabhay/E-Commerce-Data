@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 
 const macbookSchema = mongoose.Schema(
   {
-    id : {type: Number,required: true},
+    id : {type: Number,required: true,uniqued: true},
     item_image: { type: [String] },
+    
     Model_Name: { type: String, required: true, uniqued: true },
     category: { type: String, required: true },
     model: { type: String, required: true },
@@ -43,8 +44,8 @@ const macbookSchema = mongoose.Schema(
 
 const mobileSchema = mongoose.Schema(
   {
-        id : {type: Number,required: true},
-    model: { type: String, required: true },
+        id : {type: Number,required: true,uniqued: true},
+    model: { type: String, required: true,uniqued: true },
     brand: { type: String, required: true },
     category: { type: String, required: true },
     release_date: { type: String, required: true },
