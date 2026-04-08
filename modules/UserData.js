@@ -79,6 +79,7 @@ const mobileSchema = mongoose.Schema(
     },
     features: { type: [String], required: true },
     colors: { type: [String], requred: true },
+    price : {type: String},
   },
   { timestamps: true },
 );
