@@ -45,7 +45,7 @@ const macbookSchema = mongoose.Schema(
 const mobileSchema = mongoose.Schema(
   {
         id : {type: Number,required: true,uniqued: true},
-    model: { type: String, required: true,uniqued: true },
+    model: { type: String, required: true},
     brand: { type: String, required: true },
     category: { type: String, required: true },
     release_date: { type: String, required: true },
