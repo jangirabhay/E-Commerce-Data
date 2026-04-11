@@ -5,11 +5,11 @@ const macbookSchema = mongoose.Schema(
     id : {type: Number,required: true,uniqued: true},
     item_image: { type: [String] },
     
-    Model_Name: { type: String, required: true, uniqued: true },
+    Model_Name: { type: String, required: true},
     category: { type: String, required: true },
     model: { type: String, required: true },
     release_year: { type: String, required: true },
-    best_for: { type: [String], required: true, uniqued: true },
+    best_for: { type: [String], required: true},
     display: {
       size: { type: String, required: true },
       type: { type: String, required: true },
