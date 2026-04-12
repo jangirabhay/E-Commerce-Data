@@ -11,7 +11,7 @@ const macbookSchema = mongoose.Schema(
     release_year: { type: String, required: true },
     best_for: { type: [String], required: true},
     display: {
-      size: { type: String, required: true },
+      size: { type: [String], required: true },
       type: { type: String, required: true },
       resolution: { type: String, required: true },
       brightness: { type: String, required: true },
