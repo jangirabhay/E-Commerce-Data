@@ -15,7 +15,7 @@ router.get("/getAllMacbook", async (req, res) => {
 
 router.get("/macbook/:model", async (req, res) => {
   try {
-const data = await Macbook.findOne({ Model_Name: req.params.model });
+const data = await Macbook.find({ Model_Name: req.params.model });
     if (!data) return res.status(404).json("Not Found");
     res.json(data);
   } catch (error) {
@@ -25,8 +25,8 @@ const data = await Macbook.findOne({ Model_Name: req.params.model });
 
 router.post("/addMacbook", async (req, res) => {
   try {
-    const check = await Macbook.find({id : req.params.id});
-    if(check) return res.status(409).json({message : "this data already exist"});
+    const check = await Macbook.findOne({id : req.params.id});
+    if(check) return res.status(409).json({message : "this data already exist",check});
     const newData = new Macbook(req.body);
     const saveUser = newData.save();
     return res.status(201).json("User add successfully", saveUser);
