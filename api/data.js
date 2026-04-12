@@ -25,7 +25,7 @@ const data = await Macbook.find({ Model_Name: req.params.model });
 
 router.post("/addMacbook", async (req, res) => {
   try {
-    const check = await Macbook.findOne({id : req.params.id});
+    const check = await Macbook.find({id : req.params.id});
     if(check) return res.status(409).json({message : "this data already exist"});
     const newData = new Macbook(req.body);
     const saveUser = newData.save();
